@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Склад</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/listPage.js"></script>
+</head>
+<body>
+  <h1>Склад</h1> 
+  <button id="addButton">Добавить запись</button>
+  <div id="preloader" style="display:none;">Загрузка...</div>
+  <table id="itemsTable">
+    <thead>
+      <tr>
+        <th data-sort="name">Название</th>
+        <th data-sort="shelf">Полка</th>
+        <th data-sort="weight">Вес</th>
+        <th data-sort="storageTime">Время хранения</th>
+        <th>Действие</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</body>
+</html>

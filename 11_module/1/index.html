@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма Опроса</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Опрос о пользователе</h1>
+    <form id="surveyForm">
+      <label for="name">Имя пользователя:</label><br />
+      <input type="text" id="name" required /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" required /><br /><br />
+
+      <label>Пол:</label><br />
+      <input type="radio" name="gender" value="Мужской" /> Мужской
+      <input type="radio" name="gender" value="Женский" /> Женский<br /><br />
+
+      <label for="rating">Оценка сервиса:</label><br />
+      <input
+        type="range"
+        id="rating"
+        name="rating"
+        min="1"
+        max="10"
+      /><br /><br />
+
+      <label>Интересы пользователя:</label><br />
+      <input type="checkbox" name="interests" value="Спорт" /> Спорт<br />
+      <input type="checkbox" name="interests" value="Музыка" /> Музыка<br />
+      <input type="checkbox" name="interests" value="Путешествия" />
+      Путешествия<br />
+      <input type="checkbox" name="interests" value="Кино" /> Кино<br /><br />
+
+      <label for="comments">Дополнительные комментарии:</label><br />
+      <textarea id="comments"></textarea><br /><br />
+
+      <button type="button" onclick="submitForm()">Отправить</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+      function submitForm() {
+        const name = document.querySelector("#name").value;
+        const email = document.querySelector("#email").value;
+        const gender = document.querySelector('input[name="gender"]:checked');
+        const rating = document.querySelector("#rating").value;
+        const interests = Array.from(
+          document.querySelectorAll('input[name="interests"]:checked')
+        ).map((interest) => interest.value);
+        const comments = document.querySelector("#comments").value;
+
+        if (!name || !email || !gender) {
+          alert("Пожалуйста, заполните все обязательные поля.");
+          return;
+        }
+
+        const output = `
+                <h2>Информация о пользователе:</h2>
+                <p><strong>Имя:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Пол:</strong> ${gender.value}</p>
+                <p><strong>Оценка сервиса:</strong> ${rating}</p>
+                <p><strong>Интересы:</strong> ${
+                  interests.join(", ") || "Нет"
+                }</p>
+                <p><strong>Комментарии:</strong> ${comments || "Нет"}</p>
+            `;
+        document.querySelector("#output").innerHTML = output;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program</title>
+
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <ul class="list"></ul>
+    <button class="sortIncreasing">Сортировать по возрастанию</button>
+    <button class="sortDecreasing">Сортировать по убыванию</button>
+    <script>
+      const arr = [100, 500, 250, 750, 300];
+      const arrayShow = document.querySelector(".list");
+      const increasBtn = document.querySelector(".sortIncreasing");
+      const decreasBtn = document.querySelector(".sortDecreasing");
+      function showArr() {
+        arrayShow.innerHTML = "";
+        arr.forEach((num) => {
+          const element = document.createElement("li");
+          element.textContent = num;
+          arrayShow.append(element);
+        });
+      }
+
+      function sortIn() {
+        arr.sort((a, b) => a - b);
+        showArr();
+      }
+      function sortDe() {
+        arr.sort((a, b) => b - a);
+        showArr();
+      }
+      increasBtn.addEventListener("click", sortIn);
+      decreasBtn.addEventListener("click", sortDe);
+
+      showArr();
+    </script>
+  </body>
+</html>

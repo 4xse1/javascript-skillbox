@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 8px;
+  border: 1px solid #000000;
+  text-align: left;
+}
+th {
+  cursor: pointer;
+  background-color: #302929;
+  color: white;
+}
+#preloader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#addButton{
+    position: absolute;
+    left: 90%;
+    top: 3%;
+    width: 120px;
+    height: 50px;
+}
+button{
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(212, 18, 18);
+    color: white;
+}
+.addFormPage{
+    text-align: center  ;
+}
+    input {
+    margin-bottom: 20px;
+}

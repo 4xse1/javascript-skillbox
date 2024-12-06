@@ -1,0 +1,14 @@
+h1, ul, li{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+    border: none;
+}
+
+#add-product-btn{
+    background-color: green;
+    color: white;
+    height: 40px;
+    border-radius: 5px;
+}

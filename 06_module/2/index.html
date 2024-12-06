@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program</title>
+
+    <script src="index.js"></script>
+</head>
+<body>
+<h1>Поиск минимального и максимального числа</h1>
+<p class="all-elements"></p>
+<button class="min">Найти минимальное число</button>
+<button class="max">Найти максимальное число</button>
+<p>Минимальное число: <span class="minNumber"></span></p>
+<p>Максимальное число: <span class="maxNumber"></span></p>
+<script>
+    const paragraph = document.querySelector('.all-elements');
+    const minNum = document.querySelector('.minNumber');
+    const maxNum = document.querySelector('.maxNumber');
+
+    const buttonMin = document.querySelector('.min');
+    buttonMin.onclick = findMin
+
+    const buttonMax = document.querySelector('.max');
+    buttonMax.onclick = findMax
+
+    let arr = [12, 5, 8, 20, 3, 16]
+
+    for (const element of arr) {
+        paragraph.append(`${element}, `)
+    }
+
+    let maxInt = -1200000
+    function findMax() {
+        for (const element of arr) {
+            if (element >= maxInt){
+                maxInt = element
+            }
+        }
+        maxNum.textContent = maxInt
+    }
+    
+    let minInt = 1200000
+    function findMin() {
+        for (const element of arr) {
+            if (element <= minInt){
+                minInt = element
+            }
+        }
+        minNum.textContent = minInt
+    }
+</script>
+</body>
+</html>

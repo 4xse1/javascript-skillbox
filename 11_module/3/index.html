@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройка банковской карты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .card {
+            width: 350px;
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            font-size: 24px;
+            color: white;
+        }
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        input:focus {
+            border-color: #007BFF;
+            background-color: #f0f8ff;
+            outline: none;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Настройка вашей банковской карты</h1>
+
+    <p class="card" id="card">Ваша карта</p>
+
+    <div class="controls">
+        <label for="cardText">Введите текст для карты:</label>
+        <input type="text" id="cardText" placeholder="Введите текст">
+
+        <label for="cardColor">Выберите цвет карты:</label>
+        <select id="cardColor">
+            <option value="red">Красный</option>
+            <option value="blue">Синий</option>
+            <option value="green">Зелёный</option>
+        </select>
+    </div>
+
+    <script>
+        const card = document.getElementById('card');
+        const cardText = document.getElementById('cardText');
+        const cardColor = document.getElementById('cardColor');
+
+        cardText.addEventListener('input', function () {
+            card.textContent = cardText.value || 'Ваша карта';
+        });
+
+        cardText.addEventListener('focus', function () {
+            cardText.style.borderColor = '#007BFF';
+            cardText.style.backgroundColor = '#f0f8ff';
+        });
+
+        cardText.addEventListener('blur', function () {
+            cardText.style.borderColor = '#ccc';
+            cardText.style.backgroundColor = '#fff';
+        });
+
+        cardColor.addEventListener('change', function () {
+            card.style.backgroundColor = cardColor.value;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+h1, ul, li{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+    border: none;
+}
+
+#add-height-btn{
+    background-color: green;
+    color: white;
+    height: 40px;
+    border-radius: 5px;
+}
+
+
+#filter-height-btn{
+    background-color: rgb(231, 91, 9);
+    color: white;
+    height: 40px;
+    border-radius: 5px;
+}

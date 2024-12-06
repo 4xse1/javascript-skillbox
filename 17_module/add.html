@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Добавить запись</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/addPage.js"></script>
+</head>
+
+<body>
+  <div class="addFormPage">
+    <h1>Добавить запись</h1>
+    <form id="addForm">
+      <label>Название: <input type="text" id="name" required></label><br>
+      <label>Полка: <input type="text" id="shelf" required></label><br>
+      <label>Вес: <input type="number" id="weight" min="0" required></label><br>
+      <label>Время хранения: <input type="text" id="storageTime" required></label><br>
+      <button type="submit">Добавить</button>
+    </form>
+  </div>
+</body>
+
+</html>

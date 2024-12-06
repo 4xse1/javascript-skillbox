@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program</title>
+
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <script>
+      const countVowels = (word) => {
+        const vowels = ["a", "e", "i", "o", "u"];
+        word = word.toLowerCase();
+        const vowelCount = word.split('').filter(letter => vowels.includes(letter)).length;
+        return vowelCount
+      };
+      const word = "JavaScript";
+      const vowelCount = countVowels(word);
+      console.log(vowelCount);
+    </script>
+  </body>
+</html>

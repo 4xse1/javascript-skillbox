@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Program</title>
+
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="smallImages">
+      <img class="wowCat img" src="meow.png" alt="" />
+      <img class="coolCats img" src="cool cats.png" alt="" />
+      <img class="sadCat img" src="sad cat.jpg" alt="" />
+    </div>
+    <div class="bigImage"></div>
+    <script>
+      const pictures = document.querySelectorAll(".img");
+      const largePicture = document.querySelector(".bigImage");
+      pictures.forEach((picture) => {
+        picture.addEventListener("click", () => {
+          const url = picture.src;
+          largePicture.innerHTML = `<img src="${url}" alt="Large Image" style="width: 50%; height: 50%;">`
+        });
+      });
+    </script>
+  </body>
+</html>
